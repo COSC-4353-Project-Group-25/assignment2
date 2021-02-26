@@ -1,0 +1,47 @@
+html{
+	height:100%;
+}
+body{
+	height: 100%;
+	margin: 0;
+	font-family: Arial, Verdana, sans-serif;
+	display: grid;
+	color: white;
+	justify-items: center;/*horizontal positioning*/
+	align-items: center;/*vertical positioning*/
+	background-color: #4d5052;
+	
+}
+h2{
+	font-size: 30px;
+}
+main{
+	width:65%;
+	height: 75%;
+	display: grid;
+	grid-gap:0px;
+	background-color: #6baedb;
+	border-radius: 5px;
+	justify-items: center;/*horizontal positioning*/
+	align-items: center;/*vertical positioning*/
+}
+#LoginForm{
+	display:grid;
+	gap:10px;
+	align-self: flex-start;
+	justify-items: left;/*horizontal positioning*/
+	align-items: center;/*vertical positioning*/
+}
+
+#submitButton{
+	width: 100%;
+	align-self: center;
+	color: white;
+	outline: white;
+	border-radius: 7px;
+	background-color:#4d5052;
+	cursor: pointer;
+}
+#submitButton:hover{
+	background-color:#b1b8bd;
+}
