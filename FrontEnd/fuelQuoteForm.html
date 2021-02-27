@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Fuel Quote Form</title>
+</head>
+<body>
+<main>
+<h1>Fuel Quote Form</h1>
+<link rel="stylesheet" href="fuelQuoteForm.css">
+
+    <head>
+       <title>HTML Forms</title>
+    </head>
+    <p>Add your details:</p>
+    <form>
+       Gallons requested:<br> <input type="number" step="0.01" id="numberOfGallons" required>
+       <br>
+       <br>
+       Delivery Address:<br> <input type="text" name="adress"  readonly>
+       <br>
+       <br>
+       <label for="start">Delivery Date:</label>
+       <br>
+       <input type="date" id="deliveryDate" value="mmddyyyy " min="" max="3000-12-31" required>
+       <br>
+       <br>
+       Suggested Price/Gallon:<br> <input type="number" step="0.01" name="price"  readonly>
+       <br>
+       <br>
+       Total Amount Due:<br> <input type="number" step="0.01" name="amountDue"  readonly>
+       <br>
+       <br>
+       <br>
+       <input type="submit" value="Submit">
+    </form>
+   </main>
+ </body>
+
+</html>
