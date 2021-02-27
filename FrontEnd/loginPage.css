@@ -9,14 +9,19 @@ body{
 	color: white;
 	justify-items: center;/*horizontal positioning*/
 	align-items: center;/*vertical positioning*/
+	background-image: url("images/greyBackground.jpg");
 	background-color: #4d5052;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 	
 }
 h2{
 	font-size: 30px;
+	text-align:center;
 }
 main{
-	width:65%;
+	width: 30%;
 	height: 75%;
 	display: grid;
 	grid-gap:0px;
@@ -24,6 +29,7 @@ main{
 	border-radius: 5px;
 	justify-items: center;/*horizontal positioning*/
 	align-items: center;/*vertical positioning*/
+	border: 5px solid black;
 }
 #LoginForm{
 	display:grid;
