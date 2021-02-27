@@ -27,13 +27,6 @@ main{
 	justify-items: center;/*horizontal positioning*/
 	align-items: center;/*vertical positioning*/
 }
-#profileForm{
-	display:grid;
-	gap:5px;
-	align-self: flex-start;
-	justify-items: left;/*horizontal positioning*/
-	align-items: center;/*vertical positioning*/
-}
 
 #submitButton{
 	width: 100%;
