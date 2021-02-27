@@ -1,0 +1,42 @@
+html{
+	height:100%;
+}
+body{
+	height: 100%;
+	margin: 0;
+	font-family: Arial, Verdana, sans-serif;
+	display: grid;
+	color: black;
+	justify-items: center;/*horizontal positioning*/
+	align-items: center;/*vertical positioning*/
+	background-color: #4d5052;
+	
+}
+h1{
+	font-size: 40px;
+}
+
+main{
+	
+	width:65%;
+	height: 75%;
+	display: grid;
+	grid-gap:0px;
+	background-color: #6baedb;
+	border-radius: 5px;
+	justify-items: center;/*horizontal positioning*/
+	align-items: center;/*vertical positioning*/
+}
+
+table{
+	border: 1px solid black;
+	width:65%;
+	height: 60%;
+	display: grid;
+	grid-gap:0px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	justify-items: center;/*horizontal positioning*/
+	align-items: center;
+}
+
