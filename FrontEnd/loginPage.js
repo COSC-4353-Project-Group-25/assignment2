@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
 	//placeholder for username that will be held in server
 	if (username === "username1" && password === "password1"){
 		//TO DO check if mandatory profile things are blank if so take them to the create profile page
-		window.location="createProfile.html"
+		window.location="editProfile.html"
 	}
 	else {
 		//TO DO CHANGE FROM ALERT TO POP UP
