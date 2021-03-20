@@ -30,7 +30,7 @@
         }
        
         $url = "home.html";
-        #header("Location: $url");
+        header("Location: $url");
     }
    
 ?>
