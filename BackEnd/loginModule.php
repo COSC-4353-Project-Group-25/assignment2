@@ -1,17 +1,41 @@
 <?php
 
 session_start();
-$userinfo = array(
+class loginMod{
+	public function  login(){
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		if ($this->validUsername($username)){
+			if ($this->correctCredentials($username,$password)){
+				$_SESSION['username'] = $username;
+				$url = '//localhost/home.html';
+				header("Location: $url");
+			}else {
+				echo "<script>alert('Wrong credentials try again')</script>";//Invalid Login
+			}
+		}
+		else {
+			echo "<script>alert('Wrong credentials try again')</script>";//Invalid Login
+		}
+	}
+	public function validUsername(string $username):  bool {
+		$userinfo = array(
                 'username1'=>'password1',
                 'username2'=>'password2'
                 );
-	if(isset($_POST['username'])) {
-    if(array_key_exists($_POST['username'],$userinfo) && $userinfo[$_POST['username']] == $_POST['password']) {
-        $_SESSION['username'] = $_POST['username'];
-		$url = '//localhost/home.html';
-		header("Location: $url");
-    }else {
-        echo "<script>alert('Wrong password try again')</script>";//Invalid Login
-    }
-}			
+		if (array_key_exists($username,$userinfo)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public function correctCredentials($username, $password): bool {
+		$userinfo = array(
+                'username1'=>'password1',
+                'username2'=>'password2'
+                );
+		return true;
+	}
+}	
 ?>
