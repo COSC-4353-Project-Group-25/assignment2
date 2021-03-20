@@ -1,3 +1,6 @@
+<?php
+include 'fuelQuoteModule.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +12,28 @@
 <link rel="stylesheet" href="fuelQuoteForm.css">
 <script defer src="fuelQuoteForm.js"></script>
 
-    <head>
-       <title>HTML Forms</title>
-    </head>
     <p>Add your details:</p>
-    <form id="fuelQForm">
-       Gallons requested:<br> <input type="number" step="0.01" id="gallons" required>
+    <form id="fuelQForm" action="" method= "POST">
+       Gallons requested: <input type="number" name="gallons" step="0.01" min="0.01" id="gallons" required>
        <br>
        <br>
-       Delivery Address:<br> <input type="text" name="dAddress"  readonly>
+       Delivery Address: <id="address" name="address"  readonly>
        <br>
        <br>
        <label for="start">Delivery Date:</label>
-       <br>
-       <input type="date" id="dDate" value="mmddyyyy " min="" max="3000-12-31" required>
-       <br>
-       <br>
-       Suggested Price/Gallon:<br> <input type="number" step="0.01" name="price"  readonly>
+       <input type="date" name="dDate" id="dDate" value="mmddyyyy" min="" max="3000-12-31" required>
        <br>
        <br>
-       Total Amount Due:<br> <input type="number" step="0.01" name="amountDue"  readonly>
+       Suggested Price/Gallon:<step="0.01" id="price" name="price"  readonly>
        <br>
        <br>
+       Total Amount Due: <step="0.01" id="amountDue" name="amountDue"  readonly>
        <br>
-       <input type="submit" id="submit" value="Submit">
+       <br>
+       <input type="submit" name="submit" value="Submit">
     </form>
    </main>
  </body>
 
 </html>
+
