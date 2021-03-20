@@ -1,3 +1,6 @@
+<?php
+include 'loginModule.php';		
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
 	
 	<main>
 		<h2>FuelQuotes inc.<br>Login</h2>		
-		<form id="LoginForm">
+		<form name = "login" action="" method="post" id="LoginForm">
 			<label for="usernameField">Username:</label>
 			<input type="text" name="username" id="usernameField" placeholder="username">
 			<label for="passwordField">Password:</label>
