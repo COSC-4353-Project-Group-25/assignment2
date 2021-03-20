@@ -1,3 +1,7 @@
+<?php
+    include 'editProfile.php'
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,20 +11,19 @@
     <main>
 <h1>Client Profile </h1>
 <link rel="stylesheet" href="editProfile.css">
-<script defer src="editProfile.js"></script>
 <p>Finish registering by creating your profile</p>
 
     <p><span style='color: rgb(201, 45, 45)'>*</span> required </p>
     
-    <form id="profileForm"> 
+    <form id="profileForm" action = "" method = "POST"> 
         <label for="Fullname">Full Name:<span style='color: rgb(201, 45, 45)'>*</span></label> 
        <input type="text" name="name" id="name" maxlength="50" required>
        
        <label for="Address1">Address 1: <span style='color: rgb(201, 45, 45)'>*</span> </label>
-       <input type="text" name="adress1" id="address" maxlength="100" required>
+       <input type="text" name="address1" id="address" maxlength="100" required>
       
        <label for="Address2">Address 2:</label>
-       <input type="text" name="adress2" maxlength="100">
+       <input type="text" name="address2" maxlength="100">
       
        <label for="City">City:<span style='color: rgb(201, 45, 45)'>*</span> </label>
        <input type="text" name="city" id="city" maxlength="100" required >
@@ -83,7 +86,7 @@
        
         <label for="Zipcode">Zipcode:<span style='color: rgb(201, 45, 45)'>*</span></label>
        <input type="text" name="zipcode" id="zipcode" minlength = "5" maxlength="9" required>
-       <input type="submit" id="submitB" value="Save and Submit">
+       <input type="submit" name=submit id="submitB" value="Save and Submit">
     </form>
     </main>
  </body>
