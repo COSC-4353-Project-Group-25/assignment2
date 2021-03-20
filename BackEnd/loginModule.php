@@ -2,9 +2,13 @@
 
 session_start();
 class loginMod{
-	public function  login(){
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+	public function  login($username = null, $password = null){
+		if ($username == null){
+			$username = $_POST['username'];
+		}
+		if ($password == null){
+			$password = $_POST['password'];
+		}
 		if ($this->validUsername($username) && $this->correctCredentials($username,$password)){
 			$_SESSION['username'] = $username;
 			$url = '//localhost/home.html';
@@ -14,7 +18,7 @@ class loginMod{
 			echo "<script>alert('Wrong credentials try again')</script>";//Invalid Login
 		}
 	}
-	public function validUsername(string $username):  bool {
+	public function validUsername($username):  bool {
 		$userinfo = array(
                 'username1'=>'password1',
                 'username2'=>'password2'
