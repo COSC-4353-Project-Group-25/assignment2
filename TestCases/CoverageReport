@@ -1,2 +1,17 @@
+phpunit --coverage-text mep.php 
+PHPUnit 3.6.7 by Sebastian Bergmann
 
-9 (100%)
+.
+
+Time: 0 seconds, Memory: 3.50Mb
+
+OK (9 test, 19 assertion)
+
+Generating textual code coverage report, this may take a moment.
+
+Code Coverage Report 
+  2021-03-19 15:40:56
+
+ Summary: 
+  Classes: 100.00% (5/5)
+  Methods: 100.00% (7/7)
