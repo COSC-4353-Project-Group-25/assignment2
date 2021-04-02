@@ -1,5 +1,10 @@
 <?php
-include 'loginModule.php';		
+include 'loginModule.php';
+
+if (isset($_POST['username'])){
+	$loginObj = new loginMod;
+	$loginObj->login();
+}		
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +24,7 @@ include 'loginModule.php';
 			<label for="passwordField">Password:</label>
 			<input type="password" name="password" id="passwordField" placeholder="password">
 			<input type="submit" value="Login" id="submitButton">
-			<p>Not a user? <a href="registration.html">Sign up now.</a></p>
+			<p>Not a user? <a href="signupPage.html">Sign up now.</a></p>
 		</form>
 		
 	</main>
