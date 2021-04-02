@@ -19,12 +19,6 @@
 							return false;
 						}
 					}
-					else{
-						die("query failed");
-					}
-				}
-				else{
-					die('no username');
 				}
 			}
 			public function register($username = NULL, $password = NULL)
@@ -53,10 +47,6 @@
 							$_SESSION["username"] = $_POST["username"];
 							$url = "Frontend/loginPage.html";
 							header("Location: $url");
-						}
-						else
-						{
-							die($password);
 						}
 					}
 					else
