@@ -27,33 +27,33 @@ class UnitTest extends TestCase
 	}
 	public function testLogin(){
 		$loginObj = new loginMod;
-		$this->assertTrue($loginObj->login('username1','password1');
-		$this->assertFalse($loginObj->login('wrong','wrong');
+		$this->assertTrue($loginObj->login('username1','password1'));
+		$this->assertFalse($loginObj->login('wrong','wrong'));
 	}
 	public function testEditProfile(){
 		$editObj = new 	editProfMod;
-		$this->assertTrue($editObj->edit('name','address1','address2','city','state','12345');
-		$this->assertFalse($editObj->edit('name!!','address1','address2','city','state','12345');
-		$this->assertFalse($editObj->edit('name','address1','address2','city!!!','state','12345');
-		$this->assertFalse($editObj->edit('name','address1','address2','city','state!!!','12345');
-		$this->assertFalse($editObj->edit('name','address1','address2','city','state','12345dasdasd');
-		$this->assertFalse($editObj->edit(null,'address1','address2','city','state','12345');
+		$this->assertTrue($editObj->edit('name','address1','address2','city','state','12345'));
+		$this->assertFalse($editObj->edit('name!!','address1','address2','city','state','12345'));
+		$this->assertFalse($editObj->edit('name','address1','address2','city!!!','state','12345'));
+		$this->assertFalse($editObj->edit('name','address1','address2','city','state!!!','12345'));
+		$this->assertFalse($editObj->edit('name','address1','address2','city','state','12345dasdasd'));
+		$this->assertFalse($editObj->edit(null,'address1','address2','city','state','12345'));
 		}
 	public function testFuelQuoteHistory(){
 		$histObj = new fuelQuoteHistMod;
-		$this->assertTrue($histObj->hist('text.txt');
-		$this->assertFalse($histObj->hist('notAFile.txt');
+		$this->assertTrue($histObj->hist('text.txt'));
+		$this->assertFalse($histObj->hist('notAFile.txt'));
 	}
 	public function testFuelQuote(){
 		$quoteObj = new fuelQuoteMod;
-		$this->assertTrue($quoteObj->quote('6 gallons','02/12/2022');
-		$this->assertFalse($quoteObj->quote(null,null);
+		$this->assertTrue($quoteObj->quote('6 gallons','02/12/2022'));
+		$this->assertFalse($quoteObj->quote(null,null));
 	}
 	public function testRegister(){
-		$regObj = new registrationMod;
-		$this->assertFalse('username1','password');
-		$this->assertFalse('username3','2shrt');
-		$this->assertTrue('username3','password3');
+		$regObj = new registration;
+		$this->assertFalse($regObj->register('uniqueRegistration','actualPassword'));
+		$this->assertFalse($regObj->register(null,null));
+		$this->assertTrue($regObj->register('testing','again'));
 	}
 
 }
