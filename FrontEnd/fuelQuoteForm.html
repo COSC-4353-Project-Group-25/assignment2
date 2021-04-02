@@ -1,5 +1,9 @@
 <?php
-include '../BackEnd/fuelQuoteModule.php';
+include '../Backend/fuelQuoteModule.php';
+if(isset($_POST['submit'])){
+   $fq = new fuelQuote;
+   $fq->quote();
+}
 ?>
 <!DOCTYPE html>
 <html>

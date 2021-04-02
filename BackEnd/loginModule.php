@@ -1,8 +1,9 @@
 <?php
 
-session_start();
+
 class loginMod{
 	public function  login($username = null, $password = null){
+		session_destroy();
 		$db = mysqli_connect('localhost','root','your_password','fuel_thing');
 				if(!$db)	
 				{
@@ -15,15 +16,17 @@ class loginMod{
 			$password = $_POST['password'];
 		}
 		if ($this->validUsername($username,$db) && $this->correctCredentials($username,$password,$db)){
+			
+			session_start();
 			$_SESSION['username'] = $username;
 			$sql = "SELECT * FROM ClientInformation WHERE username = '$username'";
 			if(mysqli_query($db,$sql)){
 				$result = mysqli_query($db,$sql);
 				if($result->num_rows == 0){
-					$url = '//localhost/editProfile.html';
+					$url = '//localhost/Frontend/editProfile.html';
 				}
 				else{
-					$url = '//localhost/home.html';
+					$url = '//localhost/Frontend/home.html';
 				}
 			}
 			else

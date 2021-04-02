@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    
     class eProfile{
         public function isCreated($username, $db):bool{
             if($username){
@@ -26,7 +26,7 @@
             if(!$db){
                 die('Error connectinf to the sql server' . mysqli_connect_error());
             }
-            if($name == NULL && ctype_alpha($_POST['name']) && strlen($_POST['name']) <= 50){
+            if($name == NULL && strlen($_POST['name']) <= 50){
                 $name = $_POST['name'];
             }
             else{die('name');}
@@ -37,7 +37,7 @@
             if($address2 == NULL && isset($_POST['address2']) && strlen($_POST['address2']) <= 100){
                 $address2 = $_POST['address2'];
             }
-            if($city == NULL && ctype_alpha($_POST['city']) && strlen($_POST['city']) <= 100){
+            if($city == NULL && strlen($_POST['city']) <= 100){
                 $city = $_POST['city'];
             }
             else{die('city');}
@@ -51,19 +51,21 @@
             }
             else{die('zipcode');}
             if($name && $address1 && $city && $state && $zipcode){
+                session_start();
                 $uname = $_SESSION['username'];
+                
                 if($this->isCreated($uname, $db)){
                     
                     $sql = "UPDATE clientInformation 
-                    SET client_name = '$name', address1 = '$address1', address2 = '$address2', city = '$city', state ='$state', zipcode = $zipcode, username = '$uname'
+                    SET client_name = '$name', address1 = '$address1', address2 = '$address2', city = '$city', state ='$state', zipcode = $zipcode
                     WHERE username = '$uname'";
                     mysqli_query($db,$sql);
                     $url = "home.html";
                     header("Location: $url");
                 }
                 else{
-                    $sql = "INSERT INTO clientInformation (client_name, address1, address2, city, state, zipcode)
-                    VALUES ('$name', '$address1', '$address2', '$city', '$state', $zipcode)";
+                    $sql = "INSERT INTO clientInformation (client_name, address1, address2, city, state, zipcode, username)
+                    VALUES ('$name', '$address1', '$address2', '$city', '$state', $zipcode, '$uname')";
                     if(!mysqli_query($db,$sql))
                     {
                         die("Error description: " . $db -> error);
