@@ -1,5 +1,9 @@
 <?php
     include 'editProfile.php'
+    if(isset($_POST['submit'])){
+        $prof = new eProfile;
+        $prof->profile();
+    }
 ?>
 
 <!DOCTYPE html>
