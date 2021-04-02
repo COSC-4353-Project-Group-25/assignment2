@@ -1,7 +1,26 @@
 <?php
     include '../Backend/editProfile.php';
+    $prof = new eProfile;
+    $db = mysqli_connect('localhost', 'root', 'your_password', 'fuel_thing');
+    session_start();
+    $uname = $_SESSION['username'];
+    if($prof->isCreated($uname,$db))
+    {
+        $sql = "SELECT * FROM clientInformation WHERE username = '$uname'";
+        $var = mysqli_query($db,$sql);
+        if($var){
+            $result = mysqli_query($db,$sql);
+            $row = $result->fetch_row();
+            $name = $row[0];
+            $address1 = $row[1];
+            $address2 = $row[2];
+            $city = $row[3];
+            $state = $row[4];
+            $zipcode = $row[5];
+        }
+    }
     if(isset($_POST['submit'])){
-        $prof = new eProfile;
+        
         $prof->profile();
     }
 ?>
@@ -21,21 +40,21 @@
     
     <form id="profileForm" action = "" method = "POST"> 
         <label for="Fullname">Full Name:<span style='color: rgb(201, 45, 45)'>*</span></label> 
-       <input type="text" name="name" id="name" maxlength="50" required>
+       <input type="text" name="name" id="name" value='<?php if($var){echo $name;}else{echo "";}?>' maxlength="50" required>
        
        <label for="Address1">Address 1: <span style='color: rgb(201, 45, 45)'>*</span> </label>
-       <input type="text" name="address1" id="address" maxlength="100" required>
+       <input type="text" name="address1" id="address" value='<?php if($var){echo $address1;}else{echo "";}?>' maxlength="100" required>
       
        <label for="Address2">Address 2:</label>
-       <input type="text" name="address2" maxlength="100">
+       <input type="text" name="address2" value='<?php if($var){echo $address2;}else{echo "";}?>' maxlength="100">
       
        <label for="City">City:<span style='color: rgb(201, 45, 45)'>*</span> </label>
-       <input type="text" name="city" id="city" maxlength="100" required >
+       <input type="text" name="city" id="city" value='<?php if($var){echo $city;}else{echo "";}?>' maxlength="100" required >
     
        <label for="State">Choose a state:<span style='color: rgb(201, 45, 45)'>*</span></label>
 
         <select name="state" id="state" required>
-            <option value="">None</option>
+            <option value="<?php if($var){echo $state;}else{echo "";}?>"><?php if($var){echo $state;}else{echo "None";}?></option>
             <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AZ">AZ</option>
@@ -89,7 +108,7 @@
         </select>
        
         <label for="Zipcode">Zipcode:<span style='color: rgb(201, 45, 45)'>*</span></label>
-       <input type="text" name="zipcode" id="zipcode" minlength = "5" maxlength="9" required>
+       <input type="text" name="zipcode" id="zipcode" value='<?php if($var){echo $zipcode;}else{echo "";}?>' minlength = "5" maxlength="9" required>
        <input type="submit" name=submit id="submitB" value="Save and Submit">
     </form>
     </main>

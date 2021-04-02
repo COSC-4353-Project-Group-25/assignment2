@@ -4,6 +4,7 @@
 class loginMod{
 	public function  login($username = null, $password = null){
 		session_destroy();
+		session_start();
 		$db = mysqli_connect('localhost','root','your_password','fuel_thing');
 				if(!$db)	
 				{
@@ -16,8 +17,7 @@ class loginMod{
 			$password = $_POST['password'];
 		}
 		if ($this->validUsername($username,$db) && $this->correctCredentials($username,$password,$db)){
-			
-			session_start();
+
 			$_SESSION['username'] = $username;
 			$sql = "SELECT * FROM ClientInformation WHERE username = '$username'";
 			if(mysqli_query($db,$sql)){
