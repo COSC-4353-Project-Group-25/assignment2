@@ -1,5 +1,5 @@
 <?php
-
+session_destroy();
 session_start();
 class loginMod{
 	public function  login($username = null, $password = null){
