@@ -1,7 +1,7 @@
 <?php 
    include 'registration.php';
 
-   if(isset($_POST['username']))
+   if(isset($_POST['username'])&& isset($_POST['password']))
    {
        $loginObj = new registration;
        $loginObj->register();
