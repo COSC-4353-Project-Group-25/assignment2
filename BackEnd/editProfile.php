@@ -13,12 +13,6 @@
                         return true;
                     }
                 }
-                else{
-					die('no username');
-				}
-            }
-            else{
-                die('no username');
             }
         }
         public function profile($name = NULL, $address1 = NULL, $address2 = NULL, $city = NULL, $state = NULL, $zipcode = NULL){
@@ -69,8 +63,7 @@
                     if(!mysqli_query($db,$sql))
                     {
                         die("Error description: " . $db -> error);
-                    }
-                    
+		    }
                     $url = "home.html";
                     header("Location: $url");
                 }
