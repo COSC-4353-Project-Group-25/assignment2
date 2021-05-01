@@ -4,6 +4,7 @@
     $db = mysqli_connect('localhost', 'root', 'your_password', 'fuel_thing');
     session_start();
     $uname = $_SESSION['username'];
+    $var = 0;
     if($prof->isCreated($uname,$db))
     {
         $sql = "SELECT * FROM clientInformation WHERE username = '$uname'";

@@ -51,7 +51,7 @@
 						if (mysqli_query($db,$sql))
 						{
 							$_SESSION["username"] = $_POST["username"];
-							$url = "Frontend/loginPage.html";
+							$url = "loginPage.html";
 							header("Location: $url");
 						}
 						else

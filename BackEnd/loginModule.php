@@ -3,6 +3,7 @@
 
 class loginMod{
 	public function  login($username = null, $password = null){
+		session_start();
 		session_destroy();
 		session_start();
 		$db = mysqli_connect('localhost','root','your_password','fuel_thing');

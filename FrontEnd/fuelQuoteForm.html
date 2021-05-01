@@ -1,13 +1,14 @@
 <?php
-include '../Backend/fuelQuoteModule.php';
+/*include '../Backend/fuelQuoteModule.php';
 if(isset($_POST['submit'])){
    $fq = new fuelQuote;
    $fq->quote();
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title> Fuel Quote Form</title>
 </head>
 <body>
@@ -18,26 +19,34 @@ if(isset($_POST['submit'])){
 
     <p>Add your details:</p>
     <form id="fuelQForm" action="" method= "POST">
-       Gallons requested: <input type="number" name="gallons" step="0.01" min="0.01" id="gallons" required>
-       <br>
-       <br>
-       Delivery Address: <id="address" name="address"  readonly>
-       <br>
-       <br>
+      <br>
        <label for="start">Delivery Date:</label>
        <input type="date" name="dDate" id="dDate" value="mmddyyyy" min="" max="3000-12-31" required>
+       <br> 
+       <br>
+      Gallons requested: <input type="number" name="gallons" step="0.01" min="0.01" id="gallons" required>
+       <br>
+	   
+	   <br>
+	   <button type = 'button' onclick="myFunction()" disabled="disabled" id="register">Get Quote</button>
+	   <div class="FuelQuote" id = "hide" style = "display:none">
+       <br>
+       Delivery Address: <id="address" name="address"  readonly>
+       <output name="outAddress" id="oAddress"></output>
        <br>
        <br>
-       Suggested Price/Gallon:<step="0.01" id="price" name="price"  readonly>
+       Suggested Price/Gallon:<id="price" name="price"  readonly>
+       <output name="ppg" id="ppg"></output>
        <br>
        <br>
        Total Amount Due: <step="0.01" id="amountDue" name="amountDue"  readonly>
+       <output name="total" id="total"></output>
        <br>
        <br>
-       <input type="submit" name="submit" value="Submit">
+       <button type = 'button' onclick="submitF()">Submit</button>
+	   </div>
     </form>
    </main>
  </body>
 
 </html>
-
